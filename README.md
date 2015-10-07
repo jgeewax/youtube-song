@@ -8,6 +8,7 @@ but if you don't install them.
 
 ```
 $ sudo apt-get install youtube-dl avconv lame
+$ curl -O https://raw.githubusercontent.com/jgeewax/youtube-song/master/youtube-song
 ```
 
 ## Usage
