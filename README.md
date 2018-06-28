@@ -1,5 +1,7 @@
 # youtube-song
+
 Download music from YouTube
+and convert it to an MP3 file.
 
 ## Installation
 
