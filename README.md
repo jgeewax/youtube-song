@@ -7,8 +7,9 @@ youtube-song uses a few tools you should already have,
 but if you don't install them.
 
 ```
-$ sudo apt-get install youtube-dl avconv lame
+$ sudo apt-get install youtube-dl libav-tools lame
 $ curl -O https://raw.githubusercontent.com/jgeewax/youtube-song/master/youtube-song
+$ chmod a+x youtube-song
 ```
 
 ## Usage
