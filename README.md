@@ -21,10 +21,10 @@ Install via pip3
 $ sudo pip3 install -U youtube-dl
 ```
 
-#### libav-tools and lame
+#### ffmpeg and lame
 
 ```
-$ sudo apt install libav-tools lame
+$ sudo apt install ffmpeg lame
 ```
 
 ### Install youtube-song
@@ -32,6 +32,8 @@ $ sudo apt install libav-tools lame
 ```
 $ curl -O https://raw.githubusercontent.com/jgeewax/youtube-song/master/youtube-song
 $ chmod a+x youtube-song
+$ # Optional
+$ sudo mv youtube-song /usr/local/bin/
 ```
 
 ## Usage
