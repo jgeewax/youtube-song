@@ -5,18 +5,19 @@
 # Copyright 2015, JJ Geewax
 
 # TODO: Add checks for $1 and $2
-# TODO: Add checks for youtube-dl, avconv, and lame
+# TODO: Add checks for youtube-dl, ffmpeg, and lame
 
 # Come up with a base path for a place to store temporary files
-tmp="/tmp/youtube-dl-$RANDOM"
+rnd=`tr -cd 0-9 </dev/urandom | head -c 10`
+tmp="/tmp/youtube-dl-$rnd"
 
 # Use youtube-dl to grab the FLV video from YouTube
 youtube-dl --output="$tmp.flv" --format=18 "$1"
 
 # Convert the FLV to just audio, in WAV format.
-# ffmpeg is deprecated! Use avconv for conversion.
-#ffmpeg -i "$tmp.flv" -acodec pcm_s16le -ac 2 -vn -y "$tmp.wav"
-avconv -i "$tmp.flv" -acodec pcm_s16le -ac 2 -vn -y "$tmp.wav"
+ffmpeg -i "$tmp.flv" -acodec pcm_s16le -ac 2 -vn -y "$tmp.wav"
+# avconv is deprecated! Use ffmpeg for conversion.
+#avconv -i "$tmp.flv" -acodec pcm_s16le -ac 2 -vn -y "$tmp.wav"
 
 # Convert the WAV file to MP3 format
 lame "$tmp.wav" "$2"
